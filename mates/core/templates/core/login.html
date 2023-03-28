@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Login</h2>
+  <div>
+    <p>Please register <a href="{% url 'core:register' %}">here</a> if you do not have account</p>
+  </div>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Login</button>
+  </form>
+
+</div>
+
+{% endblock %}
